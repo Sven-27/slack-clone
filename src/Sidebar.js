@@ -24,7 +24,7 @@ function Sidebar() {
      db.collection('rooms').onSnapshot(snapshot => (
          setChannels(snapshot.docs.map(doc => ({
              id: doc.id,
-             name: doc.data().name
+             name: doc.data().name,
          }))
          )
     ));
@@ -49,7 +49,7 @@ function Sidebar() {
             <hr />
             <SidebarOption Icon={ExpandMoreIcon} title="Channels"/>
             <hr />
-            <SidebarOption Icon={AddIcon} title="Add Channel"/>
+            <SidebarOption Icon={AddIcon} addChannelOption title="Add Channel"/>
 
             {/**Connect to dB and list all the channels */}
             {/**<sidebarOptioin ..... /> */}
