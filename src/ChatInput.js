@@ -16,11 +16,11 @@ const sendMessage = (e) =>{
 
     if (channelId) {
         console.log(channelId)
-        db.collection('rooms').doc(channelId).collection({
+        db.collection('rooms').doc(channelId).collection("messages").add({
             message: input,
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             user: user.displayName,
-            userImage: user.photoURL,
+            userImage: user.photoURL
         })
     }
 

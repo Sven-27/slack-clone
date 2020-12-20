@@ -22,9 +22,9 @@ function Chat() {
             db.collection('rooms').doc(roomId)
             .collection('messages')
             .orderBy('timestamp', 'asc')
-            .onSnapshot((snapshot) =>
+            .onSnapshot(snapshot =>
                 setRoomMessages(
-                    snapshot.docs.map((doc) => doc.data()))
+                    snapshot.docs.map(doc => doc.data()))
             )
             console.log(roomMessages)
             
@@ -56,7 +56,7 @@ function Chat() {
                     />
                 ))}
             </div>
-            <ChatInput channelName={roomDetails?.name} channelId={roomDetails?.id} />
+            <ChatInput channelName={roomDetails?.name} channelId={roomId} />
           
         </div>
         
